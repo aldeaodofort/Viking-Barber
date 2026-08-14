@@ -528,9 +528,24 @@ function renderizarAgendamentos() {
 
             `
         : `
-              <span class="agendamento-cancelado">
-                Agendamento cancelado
-              </span>
+              <div class="admin-acoes">
+
+                <span class="agendamento-cancelado">
+                  Cancelado
+                </span>
+
+                <button
+                  class="excluir-btn"
+                  data-id="${agendamento.id}"
+                >
+
+                  <i class="fa-solid fa-trash"></i>
+
+                  Excluir
+
+                </button>
+
+              </div>
             `
       }
 
@@ -579,6 +594,28 @@ function renderizarAgendamentos() {
         () => {
 
           cancelarAgendamento(
+            botao.dataset.id
+          );
+
+        }
+      );
+
+    });
+
+
+  /* =======================================================
+     BOTÃO EXCLUIR
+  ======================================================= */
+
+  document
+    .querySelectorAll(".excluir-btn")
+    .forEach(botao => {
+
+      botao.addEventListener(
+        "click",
+        () => {
+
+          excluirAgendamento(
             botao.dataset.id
           );
 
@@ -737,6 +774,72 @@ async function cancelarAgendamento(id) {
 
     alert(
       "Não foi possível cancelar o agendamento."
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   EXCLUIR AGENDAMENTO
+========================================================= */
+
+async function excluirAgendamento(id) {
+
+  const confirmar =
+    confirm(
+      "Excluir esse agendamento cancelado do histórico? Essa ação não pode ser desfeita."
+    );
+
+
+  if (!confirmar) return;
+
+
+  try {
+
+    const resposta =
+      await fetch(
+        `${SUPABASE_URL}/rest/v1/agendamentos?id=eq.${id}`,
+        {
+
+          method: "DELETE",
+
+          headers: {
+
+            apikey:
+              SUPABASE_ANON_KEY,
+
+            Authorization:
+              `Bearer ${ACCESS_TOKEN}`,
+
+            Prefer:
+              "return=minimal"
+
+          }
+
+        }
+      );
+
+
+    if (!resposta.ok) {
+
+      throw new Error(
+        await resposta.text()
+      );
+
+    }
+
+
+    await carregarAgendamentos();
+
+
+  } catch (erro) {
+
+    console.error(erro);
+
+    alert(
+      "Não foi possível excluir o agendamento."
     );
 
   }
