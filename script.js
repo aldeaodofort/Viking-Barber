@@ -758,7 +758,7 @@ async function renderizarHorarios() {
         <i class="fa-solid fa-calendar-xmark"></i>
 
         <span>
-          A barbearia não funciona aos domingos.
+          A barbearia não funciona aos domingos e segundas.
         </span>
 
       </div>
