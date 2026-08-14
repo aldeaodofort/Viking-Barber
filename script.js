@@ -60,7 +60,7 @@ const servicos = [
       "Corte personalizado de acordo com seu estilo, finalização e acabamento.",
 
     imagem:
-      "https://images.unsplash.com/photo-1622286346003-c8c4b0f0a8f6?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1635273051839-003bf06a8751?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvcnRlJTIwbWFzY3VsaW5vfGVufDB8fDB8fHww"
   },
 
 
