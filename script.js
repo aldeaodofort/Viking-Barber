@@ -12,7 +12,7 @@ const barbearia = {
 
   instagram: "https://instagram.com/",
 
-  horario: "Segunda a sábado — 09:00 às 20:00"
+  horario: "Terça a sábado — 09:00 às 20:00"
 
 };
 
