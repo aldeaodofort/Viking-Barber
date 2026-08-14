@@ -4,7 +4,7 @@
 
 const barbearia = {
 
-  nome: "Black Gold Barbearia",
+  nome: "Caverna do Barbeiro",
 
   whatsapp: "5512996289534",
 
@@ -437,7 +437,7 @@ function configurarDataMinima() {
 
   const dia =
     String(hoje.getDate())
-      .padStart(2, "0");
+      .padStart(3, "0");
 
   dataAgendamento.min =
     `${ano}-${mes}-${dia}`;
