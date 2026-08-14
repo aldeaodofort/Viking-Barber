@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Admin — Black Gold Barbearia</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+</head>
+
+
+<body>
+
+  <main class="admin-container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="admin-header">
+
+      <div>
+
+        <span class="admin-label">
+          PAINEL ADMINISTRATIVO
+        </span>
+
+        <h1>
+          Black Gold Barbearia
+        </h1>
+
+      </div>
+
+
+      <div class="admin-header-actions">
+
+        <a
+          href="index.html"
+          class="admin-back"
+        >
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Voltar ao site
+
+        </a>
+
+
+        <button
+          id="logoutButton"
+          class="admin-logout"
+        >
+
+          <i class="fa-solid fa-right-from-bracket"></i>
+
+          Sair
+
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         ESTATÍSTICAS
+    ====================================================== -->
+
+    <section class="admin-stats">
+
+
+      <div class="admin-stat">
+
+        <i class="fa-solid fa-calendar-day"></i>
+
+        <div>
+
+          <span>
+            Hoje
+          </span>
+
+          <strong id="totalHoje">
+            0
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="admin-stat">
+
+        <i class="fa-solid fa-calendar-week"></i>
+
+        <div>
+
+          <span>
+            Esta semana
+          </span>
+
+          <strong id="totalSemana">
+            0
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="admin-stat">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <div>
+
+          <span>
+            Confirmados
+          </span>
+
+          <strong id="totalConfirmados">
+            0
+          </strong>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         AGENDA
+    ====================================================== -->
+
+    <section class="admin-agendamentos">
+
+
+      <div class="admin-section-header">
+
+
+        <div>
+
+          <span class="admin-label">
+            AGENDA
+          </span>
+
+          <h2>
+            Agendamentos
+          </h2>
+
+        </div>
+
+
+        <div class="admin-filtros">
+
+
+          <button
+            class="filtro-btn active"
+            data-filtro="hoje"
+          >
+
+            Hoje
+
+          </button>
+
+
+          <button
+            class="filtro-btn"
+            data-filtro="amanha"
+          >
+
+            Amanhã
+
+          </button>
+
+
+          <button
+            class="filtro-btn"
+            data-filtro="semana"
+          >
+
+            Semana
+
+          </button>
+
+
+          <button
+            class="filtro-btn"
+            data-filtro="todos"
+          >
+
+            Todos
+
+          </button>
+
+
+          <button
+            id="atualizarAgenda"
+            class="filtro-btn"
+            title="Atualizar agenda"
+          >
+
+            <i class="fa-solid fa-rotate"></i>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           LISTA
+      ==================================================== -->
+
+      <div
+        id="listaAgendamentos"
+        class="lista-agendamentos"
+      >
+
+        <div class="admin-loading">
+
+          <i class="fa-solid fa-spinner fa-spin"></i>
+
+          Carregando agenda...
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <script src="admin.js"></script>
+
+</body>
+
+</html>
