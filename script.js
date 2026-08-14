@@ -467,7 +467,7 @@ function gerarHorarios() {
   for (
     let minutos = inicio;
     minutos < fim;
-    minutos += 15
+    minutos += 60
   ) {
 
     const hora =
