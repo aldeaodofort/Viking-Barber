@@ -437,7 +437,7 @@ function configurarDataMinima() {
 
   const dia =
     String(hoje.getDate())
-      .padStart(3, "0");
+      .padStart(2, "0");
 
   dataAgendamento.min =
     `${ano}-${mes}-${dia}`;
@@ -677,12 +677,18 @@ function domingoOuForaDoHorario(data) {
 
   /*
     0 = domingo
+    1 = segunda
+    2 = terça
+    3 = quarta
+    4 = quinta
+    5 = sexta
+    6 = sábado
 
-    A barbearia funciona
-    de segunda a sábado.
+    A barbearia funciona:
+    terça a sábado.
   */
 
-  return diaSemana === 0;
+  return diaSemana === 0 || diaSemana === 1;
 
 }
 
